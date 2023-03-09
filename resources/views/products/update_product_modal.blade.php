@@ -15,15 +15,15 @@
         <div id="flash" class="mb-3"></div>
         <div class="form-group">
           <label for="name">Product Name</label>
-          <input type="text" class="form-control" name="name" placeholder="Product Name" id="name" required autofocus>
+          <input type="text" class="form-control" name="name" placeholder="Product Name" id="up_name">
         </div>
         <div class="form-group mt-2">
           <label for="name">Product Quantity</label>
-          <input type="text" class="form-control" name="quantity" placeholder="Product Quantity" id="quantity" required autofocus>
+          <input type="text" class="form-control" name="quantity" placeholder="Product Quantity" id="up_quantity">
         </div>
         <div class="form-group mt-2">
           <label for="name">Product Price</label>
-          <input type="text" class="form-control" name="harga" placeholder="Product Price" id="harga" required autofocus>
+          <input type="text" class="form-control" name="harga" placeholder="Product Price" id="up_harga">
         </div>
       </div>
       <div class="modal-footer">
