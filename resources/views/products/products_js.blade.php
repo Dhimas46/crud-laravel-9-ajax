@@ -107,9 +107,9 @@
         success: function(response) {
             // set nilai pada modal
             $("#updateModal #up_id").val(response.id);
-            $("#updateModal #name").val(response.name);
-            $("#updateModal #quantity").val(response.quantity);
-            $("#updateModal #harga").val(response.harga);
+            $("#updateModal #up_name").val(response.name);
+            $("#updateModal #up_quantity").val(response.quantity);
+            $("#updateModal #up_harga").val(response.harga);
             // tampilkan modal
             $("#updateModal").modal("show");
         },
@@ -122,18 +122,21 @@
 //proses update data
 $('#update-product').on('submit', function(e) {
   e.preventDefault();
-    let id = $('#up_id').val();
-    let name = $('#name').val();
-    let quantity = $('#quantity').val();
-    let harga = $('#harga').val();
+    var id = $('#up_id').val();
+    let name = $('#up_name').val();
+    let quantity = $('#up_quantity').val();
+    let harga = $('#up_harga').val();
+
+    var data = {
+      id: id,
+      name: name,
+      quantity: quantity,
+      harga: harga
+    };
     $.ajax({
         url: "{{url('api/product/update')}}/" +id,
         type: 'POST',
-        data: {
-          name: name,
-          quantity: quantity,
-          harga: harga
-        },
+        data: data,
         success: function(response) {
           if (response.success) {
                        $('.table').load(location.href+'  .table');
@@ -165,6 +168,7 @@ $('#update-product').on('submit', function(e) {
     });
 });
 
+//details
      $(document).on('click', '.details-btn', function() {
        var id = $(this).attr('data-id');
 
